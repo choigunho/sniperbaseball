@@ -1,6 +1,6 @@
 <?php
 
-    $conn = mysqli_connect("localhost", "root", "af9040", "baseball");
+    $conn = mysqli_connect("localhost", "af372", "12sqec34", "af372");
     
     $player_id = $_GET['id'];
     $qeury = "select * from batter_stats where ROSTER_ID=".$player_id." order by SEASON DESC";

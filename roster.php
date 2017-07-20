@@ -1,5 +1,5 @@
 <?php
-    $conn = mysqli_connect("localhost", "root", "af9040", "baseball");
+    $conn = mysqli_connect("localhost", "af372", "12sqec34", "af372");
     $result = mysqli_query($conn, "select * from roster order by BACK_NUM");
 
 
