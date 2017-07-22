@@ -6,7 +6,7 @@
     $qeury = "select * from batter_stats where ROSTER_ID=".$player_id." order by SEASON DESC";
     $result = mysqli_query($conn, $qeury);
 
-    echo "<table class='table table-striped'> <tr> <th>SEASON</th> <th>TEAM</th> <th>G</th> <th>AB</th> <th>R</th> <th>H</th> <th>2B</th> <th>3B</th> <th>HR</th> <th>RBI</th> <th>BB</th> <th>IBB</th> <th>SO</th> <th>SB</th> <th>CS</th> <th>AVG</th> <th>OBP</th> <th>SLG</th> </tr>";
+    echo "<table class='table table-striped'> <tr> <th>SEASON</th> <th>TEAM</th> <th>G</th> <th>AB</th> <th>R</th> <th>H</th> <th>2B</th> <th>3B</th> <th>HR</th> <th>RBI</th> <th>BB</th> <th>HBP</th> <th>SO</th> <th>SB</th> <th>CS</th> <th>AVG</th> <th>OBP</th> <th>SLG</th> </tr>";
 
     while($row = mysqli_fetch_array($result)){
 
@@ -22,7 +22,7 @@
         echo "<td>" . $row[HR] . "</td>";
         echo "<td>" . $row[RBI] . "</td>";
         echo "<td>" . $row[BB] . "</td>";
-        echo "<td>" . $row[IBB] . "</td>";
+        echo "<td>" . $row[HBP] . "</td>";
         echo "<td>" . $row[SO] . "</td>";
         echo "<td>" . $row[SB] . "</td>";
         echo "<td>" . $row[CS] . "</td>";
@@ -37,7 +37,7 @@
     }
 
     $result_total = mysqli_query($conn, "SELECT sum(GAME) AS GAME, sum(PA) as PA, sum(AB) as AB, sum(R) as R, sum(H) as H,sum(_1B) as _1B, sum(_2B) as _2B, sum(_3B) as _3B, sum(HR) as HR,
-sum(RBI) as RBI, sum(SB) as SB, sum(CS) as CS, sum(SH),sum(SF),sum(BB) as BB,sum(IBB) as IBB,sum(HBP),
+sum(RBI) as RBI, sum(SB) as SB, sum(CS) as CS, sum(SH),sum(SF),sum(BB) as BB,sum(IBB) as IBB, sum(HBP) as HBP,
 sum(SO) as SO, sum(GDP), sum(MH) 
 FROM batter_stats 
 where ROSTER_ID=".$player_id.";");
@@ -55,7 +55,7 @@ where ROSTER_ID=".$player_id.";");
     
     echo "<td>" . $row[RBI] . "</td>";
     echo "<td>" . $row[BB] . "</td>";
-    echo "<td>" . $row[IBB] . "</td>";
+    echo "<td>" . $row[HBP] . "</td>";
     echo "<td>" . $row[SO] . "</td>";
     echo "<td>" . $row[SB] . "</td>";
     echo "<td>" . $row[CS] . "</td>";

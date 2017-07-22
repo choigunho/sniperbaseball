@@ -13,7 +13,7 @@
         echo "<tr id=$id>";
 
         echo "<td>" . $row[BACK_NUM] . "</td>";
-        echo "<td>" . $row[FIRST_NM] . " " . $row[LAST_NM] . "<br>" . $row[POSITION] ."</td>";
+        echo "<td><span style='color:#8181F7'><strong>" . $row[FIRST_NM] . $row[LAST_NM] . "</strong></span><br><small>" . $row[POSITION] ."</small></td>";
 
         echo "<td>" . $row[BAT] . "/" . $row[THW] . "</td>";
 
