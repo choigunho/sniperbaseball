@@ -17,20 +17,15 @@
     <body>
         <div class="container">
             <div class="page-header">
-
-                <?php 
-                    include ("player_header.php"); 
-                ?>
-                 
+                <?php include ("player_header.php"); ?>
             </div>
             
-            <b>Batting Stats</b>
-            <div class="table-responsive">
-                <div id="contents">
-                    <?php 
-                        include ("battingstats.php"); 
-                    ?>    
-                </div>
+            <div class="batting_stats">
+                <?php include ("battingstats.php"); ?>        
+            </div>
+            
+            <div class="pitching_stats">
+                <?php include ("pitchingstats.php"); ?>    
             </div>
         </div>
     </body>
