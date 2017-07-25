@@ -26,7 +26,7 @@
 //            echo ($row[IP] * 10 % 10)/3;
             $era = ($row[ER] * 7)/(round($row[IP], 0) + ($row[IP] * 10 % 10/3));
             echo "<td>" .sprintf("%2.2f", $era). "</td>";
-            echo "<td>" . $row[GAME] . "</td>";
+            echo "<td>" . $row[G] . "</td>";
             echo "<td>" . $row[IP] . "</td>";
             echo "<td>" . $row[H] . "</td>";
             echo "<td>" . $row[R] . "</td>";
@@ -38,7 +38,7 @@
 
         }
 
-        $result_total = mysqli_query($conn, "SELECT sum(W) as W, sum(L) as L, sum(ER) as ER, sum(IP) as IP, sum(GAME) as GAME, sum(H) as H, sum(R) as R, sum(ER) as ER, sum(HR) as HR, sum(BB) as BB, sum(SO) as SO FROM pitcher_stats where ROSTER_ID=".$player_id.";");
+        $result_total = mysqli_query($conn, "SELECT sum(W) as W, sum(L) as L, sum(ER) as ER, sum(IP) as IP, sum(G) as G, sum(H) as H, sum(R) as R, sum(ER) as ER, sum(HR) as HR, sum(BB) as BB, sum(SO) as SO FROM pitcher_stats where ROSTER_ID=".$player_id.";");
         $row = mysqli_fetch_array($result_total);
         echo "<tr>";
         echo "<td>Career</td>";
@@ -48,7 +48,8 @@
         echo "<td>" . $row[L] . "</td>";
         $era = ($row[ER] * 7)/(round($row[IP], 0) + ($row[IP] * 10 % 10)/3);
         echo "<td>" .sprintf("%2.2f", $era). "</td>";
-        echo "<td>" . $row[GAME] . "</td>";
+        echo "<td>" . $row[G] . "</td>";
+        
         echo "<td>" . $row[IP] . "</td>";
         echo "<td>" . $row[H] . "</td>";
         echo "<td>" . $row[R] . "</td>";
