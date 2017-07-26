@@ -24,7 +24,12 @@
 //            echo round($row[IP], 0); 
 //            echo $row[IP] * 10 % 10; //1
 //            echo ($row[IP] * 10 % 10)/3;
-            $era = ($row[ER] * 7)/(round($row[IP], 0) + (($row[IP] * 10 % 10)/3));
+            if(($row[IP] == 0) and ($row[ER] >= 1)){
+                $era = 99.99;
+            } else {
+                $era = ($row[ER] * 7)/(round($row[IP], 0) + (($row[IP] * 10 % 10)/3));    
+            }
+    
             echo "<td>" .sprintf("%2.2f", $era). "</td>";
             echo "<td>" . $row[G] . "</td>";
             echo "<td>" . $row[IP] . "</td>";
