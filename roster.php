@@ -6,13 +6,17 @@
     echo "<div class='container'>";
     echo "<div data-role='content'>";
     echo "<div class='table-responsive'>";
-    echo "<table class='table table-striped'> <tr> <th>#</th> <th>Name</th> <th>B/T</th> <th>Age</th> </tr>";
+    echo "<table class='table table-striped'> <tr> <th style='width:10%'>#</th> <th style='width:20%'></th> <th>Name</th> <th style='width:10%'>B/T</th> <th style='width:10%'>Age</th> </tr>";
 
     while($row = mysqli_fetch_array($result)){
         $id = $row[ID];                
         echo "<tr id=$id>";
 
         echo "<td>" . $row[BACK_NUM] . "</td>";
+
+        $img = "img/".$id.".jpg";
+        echo "<td><img src=".$img." style='width: 90%; height: auto;' alt='...' class='img-responsive'></td>";
+        
         echo "<td><span style='color:#8181F7'><strong>" . $row[FIRST_NM] . $row[LAST_NM] . "</strong></span><br><small>" . $row[POSITION] ."</small></td>";
 
         echo "<td>" . $row[BAT] . "/" . $row[THW] . "</td>";
