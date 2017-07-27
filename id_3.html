@@ -13,6 +13,13 @@
         <![endif]-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/tableHeadFixer.js"></script>
+        <script>
+			$(document).ready(function() {
+				$("#fixTable1").tableHeadFixer({"head" : false, "left" : 1}); 
+                $("#fixTable2").tableHeadFixer({"head" : false, "left" : 1}); 
+			});
+		</script>
         
     </head>
     <body>

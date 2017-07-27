@@ -12,7 +12,7 @@
         echo "<div class='table-responsive'>";
         echo "<div id='contents'>";
     
-        echo "<table class='table table-striped'> <tr> <th>SEASON</th> <th>TEAM</th> <th>W</th> <th>L</th> <th>ERA</th> <th>G</th> <th>IP</th> <th>H</th><th>R</th><th>ER</th><th>HR</th><th>BB</th><th>SO</th></tr>";
+        echo "<table class='table table-striped' id='fixTable2'> <tr> <th>SEASON</th> <th>TEAM</th> <th>W</th> <th>L</th> <th>ERA</th> <th>G</th> <th>IP</th> <th>H</th><th>R</th><th>ER</th><th>HR</th><th>BB</th><th>SO</th></tr>";
 
         while($row = mysqli_fetch_array($result)){
 
