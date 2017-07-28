@@ -8,11 +8,12 @@
 
     if(mysqli_num_rows($result) != 0) {
         
+        echo "<div style='text-align: center;'><h3>Stats</h3></div>";
         echo "<b>Batting Stats</b>";
         echo "<div class='table-responsive'>";
         echo "<div id='contents'>";
 
-        echo "<table class='table table-striped' id='fixTable1'> <tr> <th>SEASON</th> <th>TEAM</th> <th>G</th> <th>AB</th> <th>R</th> <th>H</th> <th>2B</th> <th>3B</th> <th>HR</th> <th>RBI</th> <th>BB</th> <th>HBP</th> <th>SO</th> <th>SB</th> <th>CS</th> <th>AVG</th> <th>OBP</th> <th>SLG</th> </tr>";
+        echo "<table class='table table-condensed table-striped' id='fixTable1'> <tr> <th>SEASON</th> <th>TEAM</th> <th>G</th> <th>AB</th> <th>R</th> <th>H</th> <th>2B</th> <th>3B</th> <th>HR</th> <th>RBI</th> <th>BB</th> <th>HBP</th> <th>SO</th> <th>SB</th> <th>CS</th> <th>AVG</th> <th>OBP</th> <th>SLG</th> </tr>";
 
         while($row = mysqli_fetch_array($result)){
 
