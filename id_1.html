@@ -22,26 +22,35 @@
 		</script>
         
     </head>
-    <body >
+    <body>
         <div class="container">
             <div class="page-header">
                 <?php include ("player_header.php"); ?>
             </div>
         </div>
-        <div class="container" data-spy="scroll" data-target=".navbar" data-offset="50">
-            <nav class="navbar navbar-inverse navbar-fixed-top">
-            <ul class="nav navbar-nav">
-                <li><a href="#section1">Section 1</a></li>
-            </ul>
-            </nav>
-                
-            <div class="batting_stats">
-                <?php include ("battingstats.php"); ?>        
-            </div>
-            
-            <div class="pitching_stats">
-                <?php include ("pitchingstats.php"); ?>    
+        <div class="container">    
+            <div class="btn-group btn-group-justified">
+            <a href="#Summary" class="btn btn-primary">Summary</a>
+            <a href="#Stats" class="btn btn-primary">Stats</a>
+            <a href="#Awards" class="btn btn-primary">Awards</a>
             </div>
         </div>
+        <div class="container">    
+            <div id="Summary">
+                <?php include ("summary.php"); ?>   
+            </div>
+        </div>
+        <div class="container">    
+            <div id="Stats">
+                <?php include ("battingstats.php"); ?>   
+                <?php include ("pitchingstats.php"); ?>  
+            </div>
+        </div>
+        <div class="container">    
+            <div id="Awards">
+                <?php include ("Awards.php"); ?>  
+            </div>
+        </div>
+        
     </body>
 </html>
