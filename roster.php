@@ -6,7 +6,7 @@
     echo "<div class='container'>";
     echo "<div data-role='content'>";
     echo "<div class='table-responsive'>";
-    echo "<table class='table table-striped'> <tr> <th style='width:10%'>#</th> <th style='width:20%'></th> <th>Name</th> <th style='width:10%'>B/T</th> <th style='width:10%'>Age</th> </tr>";
+    echo "<table class='table table-hover'> <tr> <th style='width:10%'>#</th> <th style='width:20%'></th> <th>Name</th> <th style='width:15%'>B/T</th> <th style='width:15%'>Age</th> </tr>";
 
     while($row = mysqli_fetch_array($result)){
         $id = $row[ID];                
