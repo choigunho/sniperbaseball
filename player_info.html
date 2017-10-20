@@ -20,6 +20,14 @@
                 $("#fixTable2").tableHeadFixer({"head" : false, "left" : 1}); 
 			});
 		</script>
+        <script>
+            $('#selector button').click(function() {
+                $(this).addClass('active').siblings().removeClass('active');
+
+                // TODO: insert whatever you want to do with $(this) here
+                console.log("dfdfdf");
+            });
+        </script>
         
     </head>
     <body>
@@ -28,15 +36,6 @@
                 <?php include ("player_header.php"); ?>
             </div>
         </div>
-<!--
-        <div class="container">    
-            <div class="btn-group btn-group-justified">
-            <a href="#Summary" class="btn btn-primary">Summary</a>
-            <a href="#Stats" class="btn btn-primary">Stats</a>
-            <a href="#Awards" class="btn btn-primary">Awards</a>
-            </div>
-        </div>
--->
         <div class="container">    
             <div id="Summary">
                 <?php include ("summary.php"); ?>   
@@ -44,13 +43,19 @@
         </div>
         <div class="container">    
             <div id="Stats">
-                <?php include ("battingstats.php"); ?>   
-                <?php include ("pitchingstats.php"); ?>  
-            </div>
-        </div>
-        <div class="container">    
-            <div id="Awards">
-                <?php include ("Awards.php"); ?>  
+                <div style='text-align: center;'><h3>Stats</h3></div>
+                    <div class="text-center">
+                    <div id="selector" class="btn-group btn-group-sm">
+                      <button type="button" class="btn btn-primary">Batting</button>
+                      <button type="button" class="btn btn-primary">Pitching</button>
+                    </div>
+                </div>
+                
+        
+                <div><b>Batting Stats</b></div>
+                    <?php include ("battingstats.php"); ?>   
+                <div><b>Pitching Stats</b></div>
+                    <?php include ("pitchingstats.php"); ?>  
             </div>
         </div>
         

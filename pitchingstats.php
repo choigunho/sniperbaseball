@@ -8,7 +8,6 @@
 
     if(mysqli_num_rows($result) != 0) {
         
-        echo "<b>Pitching Stats</b>";
         echo "<div class='table-responsive'>";
         echo "<div id='contents'>";
     

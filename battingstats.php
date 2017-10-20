@@ -8,8 +8,6 @@
 
     if(mysqli_num_rows($result) != 0) {
         
-        echo "<div style='text-align: center;'><h3>Stats</h3></div>";
-        echo "<b>Batting Stats</b>";
         echo "<div class='table-responsive'>";
         echo "<div id='contents'>";
 
