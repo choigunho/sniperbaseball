@@ -17,7 +17,7 @@
         $img = "img/".$id.".jpg";
         echo "<td><img src=".$img." style='width: 90%; height: auto;' alt='...' class='img-responsive'></td>";
         
-        echo "<td><span style='color:#8181F7'><strong>" . $row[FIRST_NM] . $row[LAST_NM] . "</strong></span><br><small>" . $row[POSITION] ."</small></td>";
+        echo "<td><strong>".$row[LAST_NM_EN]." ".$row[FIRST_NM_EN]."</strong><br><small>".$row[POSITION]."</small></td>";
 
         echo "<td>" . $row[BAT] . "/" . $row[THW] . "</td>";
 
