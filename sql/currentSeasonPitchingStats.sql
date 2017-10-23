@@ -1,11 +1,11 @@
-create view af372.currentSeasonPitchingStats as
+create view af372.currentseasonpitchingstats as
 
-SELECT roster.id, FIRST_NM, LAST_NM, FIRST_NM_EN, LAST_NM_EN, SEASON, BACK_NUM, POSITION,
-G, W, L, SV, HLD, SO, ER, IP,
-round((ER * 7)/(
-round((round(IP) +  truncate((IP-round(IP))/0.3, 0) + truncate(IP-round(IP) % 0.3, 1)), 0) +
-(truncate(IP-round(IP) % 0.3, 1) * 3) 
-), 2) as ERA
+select roster.id, FIRST_NM, LAST_NM, FIRST_NM_EN, LAST_NM_EN, POSITION,
+sum(G) as G, sum(W) as W, sum(L) as L, sum(SV) as SV, sum(HLD) as HLD, sum(PA) as PA, sum(AB) as AB, sum(NP) as NP, 
+sum(round(IP)) +  truncate((sum(IP)-sum(round(IP)))/0.3, 0) + truncate((sum(IP)-sum(round(IP)))%0.3, 1) as IP,
+sum(H) as H, sum(HR) as HR, sum(SH) as SH, sum(SF) as SF, sum(BB) as BB, sum(IBB) as IBB, sum(HBP) as HBP,
+sum(SO) as SO, sum(WP) as WP, sum(BK) as BK, sum(R) as R, sum(ER) as ER,
+round((sum(ER) * 7)/(round((sum(round(IP)) +  truncate((sum(IP)-sum(round(IP)))/0.3, 0) + truncate((sum(IP)-sum(round(IP))) % 0.3, 1)), 0) + (truncate((sum(IP)-sum(round(IP))) % 0.3, 1) * 3)), 2) as ERA1
 from af372.roster inner join af372.pitcher_stats on roster.ID = pitcher_stats.ROSTER_ID 
 where SEASON=(select date_format(now(), '%Y') as 'yyyy')
-group by ROSTER_ID;
+group by ID
