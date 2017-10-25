@@ -29,31 +29,22 @@
 
     </head>
     <body>
-        <?php
-            include ("navbar.html");
-        ?>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-menu-left" style='float: left'></span>Team Leaders</a>
+                </div>
+                
+                
+                
+            </div>
+        </nav>
         
-        <div><b>Team Leaders</b></div>
-        <?php
-            include ("teamleaders.php");
-        ?>
-        
-        
-<!--
-        <ul class="list-group">
-            <li class='list-group-item'><img src='img/11.jpg' style='width: 15%; float: left; margin-right: 10%;' alt='...'><div><small>Batting Average</small></div><div><b>Kim kyeongnam</b><span class='badge' style='float: right'>.331</span></div><div>2B</div></li>
-            <li class="list-group-item"><div class='leader-profile'><img src="img/10.jpg" style='width: 60%; height: auto;' alt='...'></div><small>Batting Average</small><br><b>Kim kyeongnam</b><br>2B<span class="badge">.331</span></li>
-            <li class="list-group-item"><div class='leader-profile'><img src="img/5.jpg" style='width: 60%; height: auto;' alt='...'></div><small>Batting Average</small><br><b>Kim kyeongnam</b><br>2B<span class="badge">.331</span></li>
-            
-          <li class="list-group-item"><div><small>Home Runs</small></div><b>Kim</b><span class="badge">5</span></li> 
-          <li class="list-group-item"><div><small>Runs Batted In</small></div><b>Kim</b><span class="badge">14</span></li> 
-          <li class="list-group-item"><div><small>Stolen Bases</small></div><b>Kim</b><span class="badge">31</span></li> 
-          <li class="list-group-item"><div><small>Batting Average</small></div><b>Kim kyeongnam</b><span class="badge">.331</span></li>
-          <li class="list-group-item"><div><small>Home Runs</small></div><b>Kim</b><span class="badge">5</span></li> 
-          <li class="list-group-item"><div><small>Runs Batted In</small></div><b>Kim</b><span class="badge">14</span></li> 
-          <li class="list-group-item"><div><small>Stolen Bases</small></div><b>Kim</b><span class="badge">31</span></li> 
-        </ul>
--->
+        <div style="margin-top:14%">
+            <?php
+                include ("teamleaders.php");
+            ?>
+        </div>
         
     </body>
 </html>

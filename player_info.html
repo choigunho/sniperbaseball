@@ -20,18 +20,18 @@
                 $("#fixTable2").tableHeadFixer({"head" : false, "left" : 1}); 
 			});
 		</script>
-        <script>
-            $('#selector button').click(function() {
-                $(this).addClass('active').siblings().removeClass('active');
-
-                // TODO: insert whatever you want to do with $(this) here
-                console.log("dfdfdf");
-            });
-        </script>
         
     </head>
     <body>
-        <div class="container">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="roster.html"><span class="glyphicon glyphicon-menu-left"></span></a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container" style="margin-top:14%">
             <div class="page-header">
                 <?php include ("player_header.php"); ?>
             </div>

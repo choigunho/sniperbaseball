@@ -36,24 +36,21 @@
                 });
             });
         </script>
-        
-<!--
-        <script type="text/javascript" language="javascript">
-            $(document).ready(function() {
-                $('#contents').load("roster.html");
-            });
-        </script>
--->
 
     </head>
     <body>
-        <?php
-            include ("navbar.html");
-        ?>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-menu-left" style='float: left'></span>Roster</a>
+                </div>
+            </div>
+        </nav>
 
-        <?php 
-            include ("roster.php"); 
-        ?>
-        
+        <div style="margin-top:14%">  
+            <?php 
+                include ("roster.php"); 
+            ?>
+        </div>
     </body>
 </html>

@@ -16,6 +16,7 @@
         <meta name="theme-color" content="#ffffff">
         
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -23,36 +24,21 @@
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        
-        <!-- get player id -->
-        <script>
-            $(function(){
-                $("table tr").click(function(){
-                    var player_id = $(this).get(0).getAttribute('id');
-                    
-                    if(player_id != null) {
-                        window.location.href="player_info.html?id=" + player_id;
-                    }
-                });
-            });
-        </script>
-        
-<!--
-        <script type="text/javascript" language="javascript">
-            $(document).ready(function() {
-                $('#contents').load("roster.html");
-            });
-        </script>
--->
-        
-
     </head>
     <body>
-        <?php
-            include ("navbar.html");
-        ?>
-        <?php 
-            include ("roster.php"); 
-        ?>        
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Sniper Baseball Club</a>
+                </div>
+            </div>
+        </nav>
+        
+        <div style="margin-top:14%">    
+        <ul class="list-group">            
+          <a href="roster.html"><li class="list-group-item" ><span class="glyphicon glyphicon-user" style="padding-right: 3%"></span>Roster<span class="glyphicon glyphicon-menu-right" style='float: right'></span></li></a>
+          <a href="teamleaders.html"><li class="list-group-item"><span class="glyphicon glyphicon-signal" style="padding-right: 3%"></span>Team Leaders<span class="glyphicon glyphicon-menu-right" style='float: right'></span></li></a>
+        </ul>
+        </div>
     </body>
 </html>
