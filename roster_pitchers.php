@@ -1,9 +1,8 @@
 <?php
     $conn = mysqli_connect("localhost", "af372", "12sqec34", "af372");
-    $result = mysqli_query($conn, "select * from roster order by BACK_NUM");
+    $result = mysqli_query($conn, "select * from roster WHERE POSITION='P' order by BACK_NUM");
 
-//    echo "<div data-role='content'>";
-    echo "<div class='table-responsive'>";
+    echo "<div id='test' class='table-responsive' style='margin-bottom: 0px;'>";
     
     echo "<table class='table table-hover'> <tr> <th style='width:10%'>#</th> <th style='width:20%'></th> <th>Name</th> <th style='width:15%'>B/T</th> <th style='width:15%'>Age</th> </tr>";
 
@@ -26,8 +25,6 @@
     }
 
     echo "</table>";
-
-//    echo "</div>";
     echo "</div>";
 
     mysqli_close($conn);

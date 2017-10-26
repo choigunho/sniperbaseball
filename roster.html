@@ -16,6 +16,7 @@
         <meta name="theme-color" content="#ffffff">
         
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -36,7 +37,43 @@
                 });
             });
         </script>
-
+        
+        <script>
+            $(document).ready(function() {
+                $(window).scroll(function () {
+                    //if you hard code, then use console
+                    //.log to determine when you want the 
+                    //nav bar to stick.  
+                    console.log($(window).scrollTop())
+                    if ($(window).scrollTop() > 1) { //281
+                        $('#nav_bar').addClass('navbar-fixed navbar-fixed-top');  
+                        $('#test').addClass('nav_test');
+                    }
+                    if ($(window).scrollTop() < 101) { //281
+                        $('#nav_bar').removeClass('navbar-fixed');
+                    }
+                    if ($(window).scrollTop() > 390) { //280
+                        $('#nav_bar2').addClass('navbar-fixed');
+                    }
+                    if ($(window).scrollTop() < 391) { //281
+                        $('#nav_bar2').removeClass('navbar-fixed');  
+                    }
+                    if ($(window).scrollTop() > 490) { //280
+                        $('#nav_bar3').addClass('navbar-fixed');
+                    }
+                    if ($(window).scrollTop() < 491) { //281
+                        $('#nav_bar3').removeClass('navbar-fixed');  
+                    }
+                    if ($(window).scrollTop() > 780) { //280
+                        $('#nav_bar4').addClass('navbar-fixed');
+                    }
+                    if ($(window).scrollTop() < 781) { //281
+                        $('#nav_bar4').removeClass('navbar-fixed');  
+                    }
+                });
+            });
+        </script>
+        
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -45,12 +82,49 @@
                     <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-menu-left" style='float: left'></span>Roster</a>
                 </div>
             </div>
+        </nav>        
+        
+        <nav id='nav_bar' style="margin-top: 51px">
+            <ul class='nav_links'>
+                <span>Pitchers</span>
+            </ul>
         </nav>
-
-        <div style="margin-top:51px">  
-            <?php 
-                include ("roster.php"); 
-            ?>
+            
+        <div id="test">      
+            <?php include ("roster_pitchers.php"); ?>
         </div>
+        
+        
+    <nav id='nav_bar2'>
+        <ul class='nav_links'>
+            <span>Catchers</span>
+        </ul>
+    </nav>
+    <div>      
+        <?php include ("roster_catchers.php"); ?>
+    </div>
+        
+  
+    <nav id='nav_bar3'>
+        <ul class='nav_links'>
+            <span>Infield</span>
+        </ul>
+    </nav>    
+    <div>      
+        <?php include ("roster_infield.php"); ?>
+    </div>
+        
+        
+        
+    <nav id='nav_bar4'>
+        <ul class='nav_links'>
+            <span>Outfield</span>
+        </ul>
+    </nav>    
+    <div>      
+        <?php include ("roster_outfield.php"); ?>
+    </div>
+        
+        
     </body>
 </html>
