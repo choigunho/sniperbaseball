@@ -6,6 +6,8 @@
     
     echo "<table class='table table-hover'> <tr> <th style='width:10%'>#</th> <th style='width:20%'></th> <th>Name</th> <th style='width:15%'>B/T</th> <th style='width:15%'>Age</th> </tr>";
 
+
+   
     while($row = mysqli_fetch_array($result)){
         $id = $row[ID];                
         echo "<tr id=$id>";

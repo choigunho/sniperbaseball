@@ -44,30 +44,35 @@
                     //if you hard code, then use console
                     //.log to determine when you want the 
                     //nav bar to stick.  
-                    console.log($(window).scrollTop())
-                    if ($(window).scrollTop() > 1) { //281
+                    $pitchers_length = $('#test').css('height'); //419
+                    $catchers_length = $('#catchers').css('height');
+                    $infield_length = $('#infield').css('height');
+//                    console.log($catchers_length);
+                    console.log($(window).scrollTop());
+                    
+                    if ($(window).scrollTop() > 1) { // pitchers
                         $('#nav_bar').addClass('navbar-fixed navbar-fixed-top');  
                         $('#test').addClass('nav_test');
                     }
-                    if ($(window).scrollTop() < 101) { //281
+                    if ($(window).scrollTop() < 101) { 
                         $('#nav_bar').removeClass('navbar-fixed');
                     }
-                    if ($(window).scrollTop() > 390) { //280
+                    if ($(window).scrollTop() > parseInt($pitchers_length)) { // catchers
                         $('#nav_bar2').addClass('navbar-fixed');
                     }
-                    if ($(window).scrollTop() < 391) { //281
+                    if ($(window).scrollTop() < parseInt($pitchers_length) + 1) { 
                         $('#nav_bar2').removeClass('navbar-fixed');  
                     }
-                    if ($(window).scrollTop() > 490) { //280
+                    if ($(window).scrollTop() > parseInt($pitchers_length) + parseInt($catchers_length)) { // infield
                         $('#nav_bar3').addClass('navbar-fixed');
                     }
-                    if ($(window).scrollTop() < 491) { //281
+                    if ($(window).scrollTop() < parseInt($pitchers_length) + parseInt($catchers_length) +1) { 
                         $('#nav_bar3').removeClass('navbar-fixed');  
                     }
-                    if ($(window).scrollTop() > 780) { //280
+                    if ($(window).scrollTop() > parseInt($pitchers_length) + parseInt($catchers_length) + parseInt($infield_length)) { 
                         $('#nav_bar4').addClass('navbar-fixed');
                     }
-                    if ($(window).scrollTop() < 781) { //281
+                    if ($(window).scrollTop() < parseInt($pitchers_length) + parseInt($catchers_length) + parseInt($infield_length) + 1) { 
                         $('#nav_bar4').removeClass('navbar-fixed');  
                     }
                 });
@@ -89,41 +94,42 @@
                 <span>Pitchers</span>
             </ul>
         </nav>
-            
         <div id="test">      
             <?php include ("roster_pitchers.php"); ?>
         </div>
         
-        
-    <nav id='nav_bar2'>
-        <ul class='nav_links'>
-            <span>Catchers</span>
-        </ul>
-    </nav>
-    <div>      
-        <?php include ("roster_catchers.php"); ?>
-    </div>
-        
-  
-    <nav id='nav_bar3'>
-        <ul class='nav_links'>
-            <span>Infield</span>
-        </ul>
-    </nav>    
-    <div>      
-        <?php include ("roster_infield.php"); ?>
-    </div>
-        
-        
-        
-    <nav id='nav_bar4'>
-        <ul class='nav_links'>
-            <span>Outfield</span>
-        </ul>
-    </nav>    
-    <div>      
-        <?php include ("roster_outfield.php"); ?>
-    </div>
+        <div id=catchers>
+        <nav id='nav_bar2'>
+            <ul class='nav_links'>
+                <span>Catchers</span>
+            </ul>
+        </nav>
+        <div>      
+            <?php include ("roster_catchers.php"); ?>
+        </div>
+            </div>
+
+        <div id=infield>
+        <nav id='nav_bar3'>
+            <ul class='nav_links'>
+                <span>Infield</span>
+            </ul>
+        </nav>    
+        <div>      
+            <?php include ("roster_infield.php"); ?>
+        </div>
+        </div>
+
+
+
+        <nav id='nav_bar4'>
+            <ul class='nav_links'>
+                <span>Outfield</span>
+            </ul>
+        </nav>    
+        <div>      
+            <?php include ("roster_outfield.php"); ?>
+        </div>
         
         
     </body>
